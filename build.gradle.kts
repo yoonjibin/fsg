@@ -1,10 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "3.1.1"
-    id("io.spring.dependency-management") version "1.1.0"
-    kotlin("jvm") version "1.8.22"
-    kotlin("plugin.spring") version "1.8.22"
+    id("org.springframework.boot") version PluginVersion.SPRING_VERSION
+    id("io.spring.dependency-management") version PluginVersion.DEPENDENCY_MANAGER_VERSION
+    kotlin("jvm") version PluginVersion.JVM_VERSION
+    kotlin("plugin.spring") version PluginVersion.SPRING_PLUGIN_VERSION
+    kotlin("plugin.jpa") version PluginVersion.JPA_PLUGIN_VERSION
 }
 
 group = "team.iwfsg"
@@ -19,10 +20,14 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation(Dependencies.Web.SPRING_WEB)
+    implementation(Dependencies.Database.SPRING_DATA_JPA)
+    implementation(Dependencies.Validation.SPRING_VALIDATION)
+    implementation(Dependencies.Kotlin.KOTLIN_REFLECT)
+    implementation(Dependencies.Kotlin.KOTLIN_JDK)
+    implementation(Dependencies.Jwt.JWT)
+    runtimeOnly(Dependencies.Database.MYSQL_CONNECTOR)
+    testImplementation(Dependencies.Test.SPRING_TEST)
 }
 
 tasks.withType<KotlinCompile> {
