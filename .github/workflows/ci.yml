@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 jobs:
-  CI:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -28,6 +28,13 @@ jobs:
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+
+      - name: Create application.yml
+        run: |
+            rm ./src/main/resources/application.yml
+            touch ./src/main/resources/application.yml
+            echo "${{ secrets.APPLICATION_YML }}" >> ./src/main/resources/application.yml
+        shell: bash
 
       - name: Build with Gradle
         run: ./gradlew clean build --no-daemon
