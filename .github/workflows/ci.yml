@@ -20,15 +20,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-        services:
-          mysql:
-            image: mysql:8.0
-            env:
-              MYSQL_ROOT_PASSWORD: ${{ secrets.FSG_MYSQL_PASSWORD }}
-              MYSQL_DATABASE: fsg
-            ports:
-              - 3306:3306
-
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
