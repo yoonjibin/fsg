@@ -26,6 +26,10 @@ dependencies {
     implementation(Dependencies.Kotlin.KOTLIN_REFLECT)
     implementation(Dependencies.Kotlin.KOTLIN_JDK)
     implementation(Dependencies.Jwt.JWT)
+    implementation(Dependencies.Test.MOCKK)
+    implementation(Dependencies.Test.KOTEST_RUNNER)
+    implementation(Dependencies.Test.KOTEST_ASSERTIONS)
+    implementation(Dependencies.Test.KOTEST_EXTENSION)
     runtimeOnly(Dependencies.Database.MYSQL_CONNECTOR)
     testImplementation(Dependencies.Test.SPRING_TEST)
 }
