@@ -11,7 +11,7 @@ class UserRepositoryTest : BehaviorSpec({
       Given("UserRepository") {
           val userRepository = mockk<UserRepository>()
           When("Create UserRepository") {
-              Then("UserRepository is Not null") {
+              Then("UserRepository is not null") {
                   userRepository shouldNotBe null
               }
           }

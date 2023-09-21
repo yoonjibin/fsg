@@ -11,7 +11,7 @@ class ProductRepositoryTest : BehaviorSpec({
     Given("productRepository") {
         val productRepository = mockk<ProductRepository>()
         When("create ProductRepository") {
-            Then("ProductRepository is Not Null") {
+            Then("ProductRepository is not null") {
                 productRepository shouldNotBe null
             }
         }
