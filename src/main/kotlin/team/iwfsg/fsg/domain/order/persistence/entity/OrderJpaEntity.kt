@@ -9,25 +9,24 @@ import java.time.LocalDateTime
 
 @Entity
 @Table(name = "order")
-class Order(
+class OrderJpaEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "user", nullable = false)
-    val user: User,
+    @JoinColumn(name = "user_id", nullable = false)
+    val userId: User,
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "product", nullable = false)
-    val product: Product,
+    @JoinColumn(name = "product_id", nullable = false)
+    val productId: Product,
 
     @Column(name = "created_at")
     val createdAt: LocalDateTime,
 
     @Column(name = "updated_at")
     val updatedAt: LocalDateTime
-) {
-}
+)
