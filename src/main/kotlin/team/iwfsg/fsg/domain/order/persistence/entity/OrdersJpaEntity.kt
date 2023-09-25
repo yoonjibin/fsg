@@ -8,8 +8,8 @@ import team.iwfsg.fsg.domain.user.persistence.entity.UserJpaEntity
 import java.time.LocalDateTime
 
 @Entity
-@Table(name = "order")
-class OrderJpaEntity(
+@Table(name = "orders")
+class OrdersJpaEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long,
