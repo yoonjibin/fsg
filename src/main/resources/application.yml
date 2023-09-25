@@ -7,3 +7,5 @@ spring:
   jpa:
     hibernate:
       ddl-auto: ${JPA_DDL_AUTO}
+server:
+  port: {SERVER_PORT}
