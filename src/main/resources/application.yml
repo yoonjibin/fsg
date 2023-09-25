@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    driver-class-name: ${DB_DRIVER}
+    username: ${DB_USER_NAME}
+    password: ${DB_PASSWORD}
+    url: ${DB_URL}
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO}
