@@ -13,7 +13,7 @@ class ProductJpaEntity(
    val name: String,
 
    @Column(nullable = false)
-   val price: String,
+   val price: Long,
 
    @Column(nullable = false)
    val description: String
