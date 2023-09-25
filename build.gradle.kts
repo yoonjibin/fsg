@@ -26,8 +26,13 @@ dependencies {
     implementation(Dependencies.Kotlin.KOTLIN_REFLECT)
     implementation(Dependencies.Kotlin.KOTLIN_JDK)
     implementation(Dependencies.Jwt.JWT)
+    implementation(Dependencies.Test.MOCKK)
     runtimeOnly(Dependencies.Database.MYSQL_CONNECTOR)
     testImplementation(Dependencies.Test.SPRING_TEST)
+    testImplementation(Dependencies.Test.KOTEST_RUNNER)
+    testImplementation(Dependencies.Test.KOTEST_ASSERTIONS)
+    testImplementation(Dependencies.Test.KOTEST_EXTENSION)
+    testImplementation(Dependencies.Test.MOCKK)
 }
 
 tasks.withType<KotlinCompile> {
