@@ -1,7 +1,9 @@
 package team.iwfsg.fsg
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.boot.runApplication
+
 
 @SpringBootApplication
 class FsgApplication
