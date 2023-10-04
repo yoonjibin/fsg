@@ -15,7 +15,7 @@ import team.iwfsg.fsg.global.security.handler.CustomAuthenticationEntryPoint
 @Configuration
 @EnableWebSecurity
 class SecurityConfig(
-        private val jwtParser: JwtParser
+        private val jwtParser: JwtParser,
         private val objectMapper: ObjectMapper,
 ) {
     @Bean
