@@ -4,6 +4,7 @@ import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import team.iwfsg.fsg.domain.auth.persistence.entity.RefreshTokenEntity
 import team.iwfsg.fsg.domain.auth.persistence.repository.RefreshTokenRepository
+import team.iwfsg.fsg.domain.auth.presentation.data.response.TokenResponse
 import team.iwfsg.fsg.global.security.jwt.properties.SecurityProperties
 import java.security.Key
 import java.time.LocalDateTime
