@@ -2,20 +2,23 @@ package team.iwfsg.fsg.global.security.jwt
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
+import team.iwfsg.fsg.domain.auth.persistence.entity.RefreshTokenEntity
+import team.iwfsg.fsg.domain.auth.persistence.repository.RefreshTokenRepository
 import team.iwfsg.fsg.global.security.jwt.properties.SecurityProperties
 import java.security.Key
 import java.time.LocalDateTime
 import java.util.*
 
 class JwtTokenProvider(
-        private val securityProperties: SecurityProperties
+        private val securityProperties: SecurityProperties,
+        private val refreshTokenRepository: RefreshTokenRepository
 ) {
     fun generate(userId: Long): TokenResponse {
         val accessToken = generateAccessToken(userId, securityProperties.accessSecret)
         val refreshToken = generateRefreshToken(userId, securityProperties.refreshSecret)
         val accessExpiredAt = getAccessTokenExpiredAt()
         val refreshExpiredAt = getRefreshTokenExpiredAt()
-        // TODO 리프레쉬 토큰 저장 로직 구현 - 윤지빈
+        refreshTokenRepository.save(RefreshTokenEntity(userId = userId, token = refreshToken, expiredAt = securityProperties.refreshExp))
         return TokenResponse(accessToken, refreshToken, accessExpiredAt, refreshExpiredAt)
     }
 
