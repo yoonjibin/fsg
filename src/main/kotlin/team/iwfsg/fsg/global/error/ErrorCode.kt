@@ -5,5 +5,5 @@ enum class ErrorCode(val message: String, val status: Int) {
     INVALID_TOKEN("invalid token",401),
     FORBIDDEN("forbidden", 403),
     USER_NOT_FOUND("user not found", 404),
-    INTERVAL_SERVER_ERROR("internal server error", 500);
+    INTERNAL_SERVER_ERROR("internal server error", 500);
 }
