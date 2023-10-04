@@ -2,12 +2,10 @@ package team.iwfsg.fsg.global.security
 
 import io.jsonwebtoken.security.Keys
 import org.springframework.boot.context.properties.ConfigurationProperties
-import org.springframework.boot.context.properties.bind.ConstructorBinding
 import java.nio.charset.StandardCharsets
 
-@ConstructorBinding
 @ConfigurationProperties(prefix = "jwt")
-class SecurityConfig(
+class SecurityProperties(
    accessSecret: String,
    refreshSecret: String,
    val accessExp: Int,
