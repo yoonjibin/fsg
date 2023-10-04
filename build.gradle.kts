@@ -26,6 +26,8 @@ dependencies {
     implementation(Dependencies.Kotlin.KOTLIN_REFLECT)
     implementation(Dependencies.Kotlin.KOTLIN_JDK)
     implementation(Dependencies.Jwt.JWT)
+    implementation(Dependencies.Jwt.JWT_IMPL)
+    implementation(Dependencies.Jwt.JWT_JACKSON)
     implementation(Dependencies.Test.MOCKK)
     implementation(Dependencies.Security.SPRING_SECURITY)
     implementation(Dependencies.Configuration.CONFIGURATION_PROCESSOR)
