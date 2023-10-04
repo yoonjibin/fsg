@@ -1,6 +1,7 @@
 package team.iwfsg.fsg.global.error
 
 enum class ErrorCode(val message: String, val status: Int) {
-    FORBIDDEN("FORBIDDEN", 403),
-    INTERVAL_SERVER_ERROR("서버 오류 입니다.", 500);
+    FORBIDDEN("forbidden", 403),
+    USER_NOT_FOUND("user not found", 404),
+    INTERVAL_SERVER_ERROR("internal server error", 500);
 }
