@@ -1,4 +1,4 @@
-package team.iwfsg.fsg.domain.auth.presentation.entity
+package team.iwfsg.fsg.domain.auth.persistence.entity
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.redis.core.RedisHash
