@@ -7,7 +7,7 @@ import org.springframework.data.redis.core.index.Indexed
 import java.util.concurrent.TimeUnit
 
 @RedisHash(value = "refresh_token")
-data class RefreshToken(
+data class RefreshTokenEntity(
     @Id
     val userIdx: Long,
     @Indexed
