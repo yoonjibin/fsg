@@ -1,7 +1,6 @@
 package team.iwfsg.fsg.global.security.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import jakarta.servlet.FilterConfig
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
@@ -10,12 +9,13 @@ import org.springframework.security.config.http.SessionCreationPolicy
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
-import team.iwfsg.fsg.global.security.JwtTokenProvider
+import team.iwfsg.fsg.global.security.JwtParser
 import team.iwfsg.fsg.global.security.handler.CustomAuthenticationEntryPoint
 
 @Configuration
 @EnableWebSecurity
 class SecurityConfig(
+        private val jwtParser: JwtParser
         private val objectMapper: ObjectMapper,
 ) {
     @Bean
@@ -34,7 +34,7 @@ class SecurityConfig(
                     it.authenticationEntryPoint(CustomAuthenticationEntryPoint(objectMapper))
                 }
         http
-                .apply(FilterConfig(jwtTokenProvider, objectMapper))
+                .apply(FilterConfig(jwtParser, objectMapper))
         return http.build()
     }
     @Bean
