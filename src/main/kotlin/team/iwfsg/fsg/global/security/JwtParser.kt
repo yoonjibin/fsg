@@ -20,7 +20,7 @@ class JwtParser(
     fun parseRefreshToken(refreshToken: String): String? =
             if(refreshToken.startsWith(SecurityProperties.tokenPrefix)) refreshToken.replace(SecurityProperties.tokenPrefix, "") else null
 
-    fun authentication(accessToken: String): Authentication =
+    fun getAuthentication(accessToken: String): Authentication =
             authDetailsService.loadUserByUsername(getTokenBody(accessToken, securityProperties.accessSecret).subject)
                     .let { UsernamePasswordAuthenticationToken(it, "", it.authorities) }
 
