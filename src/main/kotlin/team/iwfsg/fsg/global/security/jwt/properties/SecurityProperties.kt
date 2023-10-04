@@ -1,4 +1,4 @@
-package team.iwfsg.fsg.global.security
+package team.iwfsg.fsg.global.security.jwt.properties
 
 import io.jsonwebtoken.security.Keys
 import org.springframework.boot.context.properties.ConfigurationProperties
@@ -12,7 +12,7 @@ class SecurityProperties(
    val refreshExp: Int
 ) {
     val accessSecret = Keys.hmacShaKeyFor(accessSecret.toByteArray(StandardCharsets.UTF_8))
-    val refreshSecret = Keys.hmacShaKeyFor(accessSecret.toByteArray(StandardCharsets.UTF_8))
+    val refreshSecret = Keys.hmacShaKeyFor(refreshSecret.toByteArray(StandardCharsets.UTF_8))
 
     companion object {
         const val accessType = "access"

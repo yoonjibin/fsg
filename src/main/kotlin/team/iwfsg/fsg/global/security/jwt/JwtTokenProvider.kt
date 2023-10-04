@@ -1,7 +1,8 @@
-package team.iwfsg.fsg.global.security
+package team.iwfsg.fsg.global.security.jwt
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
+import team.iwfsg.fsg.global.security.jwt.properties.SecurityProperties
 import java.security.Key
 import java.time.LocalDateTime
 import java.util.*

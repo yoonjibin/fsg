@@ -5,7 +5,7 @@ import org.springframework.security.config.annotation.SecurityConfigurerAdapter
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.web.DefaultSecurityFilterChain
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
-import team.iwfsg.fsg.global.security.JwtParser
+import team.iwfsg.fsg.global.security.jwt.JwtParser
 import team.iwfsg.fsg.global.security.filter.ExceptionFilter
 import team.iwfsg.fsg.global.security.filter.JwtAuthenticationFilter
 
