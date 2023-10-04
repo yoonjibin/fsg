@@ -30,6 +30,7 @@ dependencies {
     implementation(Dependencies.Jwt.JWT_JACKSON)
     implementation(Dependencies.Test.MOCKK)
     implementation(Dependencies.Security.SPRING_SECURITY)
+    implementation(Dependencies.Database.SPRING_REDIS)
     implementation(Dependencies.Configuration.CONFIGURATION_PROCESSOR)
     runtimeOnly(Dependencies.Database.MYSQL_CONNECTOR)
     testImplementation(Dependencies.Test.SPRING_TEST)
