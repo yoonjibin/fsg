@@ -5,9 +5,11 @@ import io.jsonwebtoken.Jwts
 import jakarta.servlet.http.HttpServletRequest
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication
+import org.springframework.stereotype.Component
 import team.iwfsg.fsg.global.security.principle.AuthDetailsService
 import java.security.Key
 
+@Component
 class JwtParser(
         private val securityProperties: SecurityProperties,
         private val authDetailsService: AuthDetailsService
