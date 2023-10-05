@@ -1,7 +1,8 @@
-package team.iwfsg.fsg.global.security.jwt
+package team.iwfsg.fsg.global.security.jwt.impl
 
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
+import org.springframework.stereotype.Component
 import team.iwfsg.fsg.domain.auth.persistence.entity.RefreshTokenEntity
 import team.iwfsg.fsg.domain.auth.persistence.repository.RefreshTokenRepository
 import team.iwfsg.fsg.domain.auth.presentation.data.response.TokenResponse
@@ -10,7 +11,8 @@ import java.security.Key
 import java.time.LocalDateTime
 import java.util.*
 
-class JwtTokenProvider(
+@Component
+class JwtTokenProviderImpl(
         private val securityProperties: SecurityProperties,
         private val refreshTokenRepository: RefreshTokenRepository
 ) {
