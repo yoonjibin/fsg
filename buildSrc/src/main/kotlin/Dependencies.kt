@@ -50,6 +50,6 @@ object Dependencies {
     }
 
     object Swagger {
-        const val OPEN_API = "org.springdoc:springdoc-openapi-starter-webmvc-ui:${Versions.OPEN_API_VERSION}"
+        const val SPRING_DOC_OPEN_API = "org.springdoc:springdoc-openapi-starter-webmvc-ui:${Versions.OPEN_API_VERSION}"
     }
 }

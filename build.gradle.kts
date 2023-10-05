@@ -32,7 +32,7 @@ dependencies {
     implementation(Dependencies.Security.SPRING_SECURITY)
     implementation(Dependencies.Database.SPRING_REDIS)
     implementation(Dependencies.Configuration.CONFIGURATION_PROCESSOR)
-    implementation(Dependencies.Swagger.OPEN_API)
+    implementation(Dependencies.Swagger.SPRING_DOC_OPEN_API)
     runtimeOnly(Dependencies.Database.MYSQL_CONNECTOR)
     testImplementation(Dependencies.Test.SPRING_TEST)
     testImplementation(Dependencies.Test.KOTEST_RUNNER)
