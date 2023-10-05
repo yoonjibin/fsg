@@ -5,7 +5,7 @@ object Dependencies {
     }
 
     object Transaction {
-        const val SPRING_TRANSACTION = "org.springframework:spring-tx:${Versions.SPRING_TRANSACTION}"
+        const val SPRING_TRANSACTION = "org.springframework:spring-tx:${Versions.SPRING_TRANSACTION_VERSION}"
     }
 
     object Web {
@@ -37,21 +37,19 @@ object Dependencies {
     }
 
     object Querydsl {
-        const val QUERYDSL = "com.querydsl:querydsl-jpa:${Versions.QUERYDSL}"
-        const val QUERYDSL_PROCESSOR = "com.querydsl:querydsl-apt:${Versions.QUERYDSL}:jpa"
+        const val QUERYDSL = "com.querydsl:querydsl-jpa:${Versions.QUERYDSL_VERSION}"
+        const val QUERYDSL_PROCESSOR = "com.querydsl:querydsl-apt:${Versions.QUERYDSL_VERSION}:jpa"
     }
 
     object Test {
-        const val SPRING_TEST = "org.springframework.boot:spring-boot-starter-test:${Versions.SPRING_TEST}"
-        const val MOCKK = "io.mockk:mockk:${Versions.MOCKK}"
-        const val KOTEST_RUNNER = "io.kotest:kotest-runner-junit5:${Versions.KOTEST_JUNIT}"
-        const val KOTEST_EXTENSION = "io.kotest.extensions:kotest-extensions-spring:${Versions.KOTEST_EXTENSION}"
-        const val KOTEST_ASSERTIONS = "io.kotest:kotest-assertions-core:${Versions.KOTEST_ASSERTIONS}"
+        const val SPRING_TEST = "org.springframework.boot:spring-boot-starter-test:${Versions.SPRING_TEST_VERSION}"
+        const val MOCKK = "io.mockk:mockk:${Versions.MOCKK_VERSION}"
+        const val KOTEST_RUNNER = "io.kotest:kotest-runner-junit5:${Versions.KOTEST_JUNIT_VERSION}"
+        const val KOTEST_EXTENSION = "io.kotest.extensions:kotest-extensions-spring:${Versions.KOTEST_EXTENSION_VERSION}"
+        const val KOTEST_ASSERTIONS = "io.kotest:kotest-assertions-core:${Versions.KOTEST_ASSERTIONS_VERSION}"
     }
-    object Mail {
-        const val SPRING_MAIL = "org.springframework.boot:spring-boot-starter-mail"
-    }
-    object Thymeleaf {
-        const val SPRING_THYMELEAF = "org.springframework.boot:spring-boot-starter-thymeleaf"
+
+    object Swagger {
+        const val OPEN_API = "org.springdoc:springdoc-openapi-starter-webmvc-ui:${Versions.OPEN_API_VERSION}"
     }
 }
