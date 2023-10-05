@@ -25,7 +25,7 @@ dependencies {
     implementation(Dependencies.Validation.SPRING_VALIDATION)
     implementation(Dependencies.Kotlin.KOTLIN_REFLECT)
     implementation(Dependencies.Kotlin.KOTLIN_JDK)
-    implementation(Dependencies.Jwt.JWT)
+    implementation(Dependencies.Jwt.JWT_API)
     implementation(Dependencies.Jwt.JWT_IMPL)
     implementation(Dependencies.Jwt.JWT_JACKSON)
     implementation(Dependencies.Test.MOCKK)

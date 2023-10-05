@@ -25,7 +25,7 @@ object Dependencies {
     }
 
     object Jwt {
-        const val JWT = "io.jsonwebtoken:jjwt:${Versions.JWT_VERSION}"
+        const val JWT_API = "io.jsonwebtoken:jjwt-api:${Versions.JWT_API_VERSION}"
         const val JWT_IMPL = "io.jsonwebtoken:jjwt-impl:${Versions.JWT_IMPL_VERSION}"
         const val JWT_JACKSON= "io.jsonwebtoken:jjwt-jackson:${Versions.JWT_JACKSON_VERSION}"
     }
