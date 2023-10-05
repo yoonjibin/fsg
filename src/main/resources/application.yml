@@ -9,3 +9,8 @@ spring:
       ddl-auto: ${JPA_DDL_AUTO}
 server:
   port: ${SERVER_PORT}
+jwt:
+  accessSecret: ${ACCESS_SECRET}
+  refreshSecret: ${REFRESH_SECRET}
+  accessExp: ${ACCESS_EXP}
+  refreshExp: ${REFRESH_EXP}
