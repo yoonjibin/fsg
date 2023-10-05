@@ -6,5 +6,7 @@ object Versions {
     const val KOTEST_ASSERTIONS = "5.5.5"
     const val SPRING_TRANSACTION = "5.3.11"
     const val SPRING_TEST = "2.7.7"
-    const val JWT_VERSION = "0.9.1"
+    const val JWT_API_VERSION = "0.11.5"
+    const val JWT_IMPL_VERSION = "0.11.5"
+    const val JWT_JACKSON_VERSION = "0.11.5"
 }

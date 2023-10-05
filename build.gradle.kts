@@ -25,14 +25,18 @@ dependencies {
     implementation(Dependencies.Validation.SPRING_VALIDATION)
     implementation(Dependencies.Kotlin.KOTLIN_REFLECT)
     implementation(Dependencies.Kotlin.KOTLIN_JDK)
-    implementation(Dependencies.Jwt.JWT)
+    implementation(Dependencies.Jwt.JWT_API)
+    implementation(Dependencies.Jwt.JWT_IMPL)
+    implementation(Dependencies.Jwt.JWT_JACKSON)
     implementation(Dependencies.Test.MOCKK)
+    implementation(Dependencies.Security.SPRING_SECURITY)
+    implementation(Dependencies.Database.SPRING_REDIS)
+    implementation(Dependencies.Configuration.CONFIGURATION_PROCESSOR)
     runtimeOnly(Dependencies.Database.MYSQL_CONNECTOR)
     testImplementation(Dependencies.Test.SPRING_TEST)
     testImplementation(Dependencies.Test.KOTEST_RUNNER)
     testImplementation(Dependencies.Test.KOTEST_ASSERTIONS)
     testImplementation(Dependencies.Test.KOTEST_EXTENSION)
-    testImplementation(Dependencies.Test.MOCKK)
 }
 
 tasks.withType<KotlinCompile> {
