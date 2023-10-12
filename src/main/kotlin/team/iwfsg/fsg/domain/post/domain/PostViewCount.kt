@@ -4,6 +4,6 @@ import team.iwfsg.fsg.global.annotation.Aggregate
 
 @Aggregate
 data class PostViewCount(
-   val id: Long,
+   val postId: Long,
    val ips: Set<String>
 )
