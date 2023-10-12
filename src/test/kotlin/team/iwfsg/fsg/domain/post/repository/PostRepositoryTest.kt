@@ -7,7 +7,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import team.iwfsg.fsg.domain.post.persistence.repository.PostRepository
 
 @DataJpaTest
-class ProductRepositoryTest : BehaviorSpec({
+class PostRepositoryTest : BehaviorSpec({
     Given("postRepository") {
         val productRepository = mockk<PostRepository>()
         When("create postRepository") {
