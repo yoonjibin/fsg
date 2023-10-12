@@ -1,6 +1,7 @@
 package team.iwfsg.fsg.domain.post.persistence.entity
 
 import jakarta.persistence.*
+import team.iwfsg.fsg.domain.post.domain.enums.PostType
 
 @Entity
 @Table(name = "post")
@@ -16,7 +17,8 @@ class PostJpaEntity(
    val content: String,
 
    @Column(nullable = false)
-   val boardType: String,
+   @Enumerated(EnumType.STRING)
+   val boardType: PostType,
 
    @Column(nullable = false)
    val writerId: Long
