@@ -1,17 +1,17 @@
-package team.iwfsg.fsg.domain.product.repository
+package team.iwfsg.fsg.domain.post.repository
 
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldNotBe
 import io.mockk.mockk
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
-import team.iwfsg.fsg.domain.product.persistence.repository.ProductRepository
+import team.iwfsg.fsg.domain.post.persistence.repository.PostRepository
 
 @DataJpaTest
 class ProductRepositoryTest : BehaviorSpec({
-    Given("productRepository") {
-        val productRepository = mockk<ProductRepository>()
-        When("create ProductRepository") {
-            Then("ProductRepository is not null") {
+    Given("postRepository") {
+        val productRepository = mockk<PostRepository>()
+        When("create postRepository") {
+            Then("postRepository is not null") {
                 productRepository shouldNotBe null
             }
         }
