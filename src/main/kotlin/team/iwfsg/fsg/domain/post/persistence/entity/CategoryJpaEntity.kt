@@ -3,7 +3,7 @@ package team.iwfsg.fsg.domain.post.persistence.entity
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "post")
+@Table(name = "category")
 data class CategoryJpaEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

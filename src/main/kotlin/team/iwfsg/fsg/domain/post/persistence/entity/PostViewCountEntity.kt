@@ -3,7 +3,7 @@ package team.iwfsg.fsg.domain.post.persistence.entity
 import org.springframework.data.annotation.Id
 import org.springframework.data.redis.core.RedisHash
 
-@RedisHash("post-view-count")
+@RedisHash("post_view_count")
 data class PostViewCountEntity(
     @Id
     val postId: Long,
