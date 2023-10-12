@@ -9,10 +9,10 @@ import team.iwfsg.fsg.domain.post.persistence.repository.PostRepository
 @DataJpaTest
 class PostRepositoryTest : BehaviorSpec({
     Given("postRepository") {
-        val productRepository = mockk<PostRepository>()
+        val postRepository = mockk<PostRepository>()
         When("create postRepository") {
             Then("postRepository is not null") {
-                productRepository shouldNotBe null
+                postRepository shouldNotBe null
             }
         }
     }
