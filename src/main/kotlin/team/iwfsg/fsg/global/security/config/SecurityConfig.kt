@@ -3,6 +3,7 @@ package team.iwfsg.fsg.global.security.config
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.http.HttpMethod
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.http.SessionCreationPolicy
@@ -28,6 +29,7 @@ class SecurityConfig(
                 .sessionManagement{it.sessionCreationPolicy(SessionCreationPolicy.STATELESS)}
 
                 .authorizeHttpRequests{
+                    it.requestMatchers(HttpMethod.POST, "/auth/sign-up").permitAll()
                     it.anyRequest().denyAll()
                 }
                 .exceptionHandling{
