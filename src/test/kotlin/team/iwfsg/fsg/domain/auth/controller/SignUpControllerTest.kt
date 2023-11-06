@@ -1,12 +1,14 @@
 package team.iwfsg.fsg.domain.auth.controller
 
 import io.kotest.core.spec.style.BehaviorSpec
+import io.kotest.matchers.shouldBe
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
 import org.springframework.http.HttpStatus
 import team.iwfsg.fsg.domain.auth.data.dto.SignUpDto
 import team.iwfsg.fsg.domain.auth.mapper.AuthMapper
+import team.iwfsg.fsg.domain.auth.presentation.AuthController
 import team.iwfsg.fsg.domain.auth.presentation.data.request.SignUpRequest
 import team.iwfsg.fsg.domain.auth.service.SignUpService
 
@@ -32,7 +34,7 @@ class SignUpControllerTest : BehaviorSpec({
             every { authMapper.mapSignUpRequestToDto(request) } returns dto
             every { signUpService.execute(dto) } returns Unit
 
-            val response = authController.signIn(request)
+            val response = authController.signUp(request)
 
             then("서비스가 한번은 실행되어야 함") {
                 verify(exactly = 1) { signUpService.execute(dto) }
