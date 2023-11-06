@@ -6,9 +6,8 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import team.iwfsg.fsg.domain.auth.data.dto.SignUpDto
 import team.iwfsg.fsg.domain.auth.exception.UserAlreadyExistException
-import team.iwfsg.fsg.domain.auth.mapper.UserMapper
+import team.iwfsg.fsg.domain.auth.mapper.AuthMapper
 import team.iwfsg.fsg.domain.auth.service.SignUpService
-import team.iwfsg.fsg.domain.user.persistence.entity.UserJpaEntity
 import team.iwfsg.fsg.domain.user.persistence.repository.UserRepository
 
 @Service
@@ -16,7 +15,7 @@ import team.iwfsg.fsg.domain.user.persistence.repository.UserRepository
 class SignUpServiceImpl(
         private val userRepository: UserRepository,
         private val passwordEncoder: PasswordEncoder,
-        private val userMapper: UserMapper
+        private val authMapper: AuthMapper
 ) : SignUpService {
 
     override fun execute(dto: SignUpDto) {
@@ -33,7 +32,7 @@ class SignUpServiceImpl(
     private fun saveUser(dto: SignUpDto) {
         val encodedPassword = passwordEncoder.encode(dto.password)
 
-        val userEntity = userMapper.mapSignUpDtoToEntity(
+        val userEntity = authMapper.mapSignUpDtoToEntity(
                 dto = dto,
                 encodedPassword = encodedPassword
         )

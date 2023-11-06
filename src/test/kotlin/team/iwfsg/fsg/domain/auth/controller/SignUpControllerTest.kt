@@ -1,23 +1,22 @@
 package team.iwfsg.fsg.domain.auth.controller
 
 import io.kotest.core.spec.style.BehaviorSpec
-import io.kotest.matchers.ints.exactly
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
-import org.mockito.Mockito.verify
 import org.springframework.http.HttpStatus
 import team.iwfsg.fsg.domain.auth.data.dto.SignUpDto
-import team.iwfsg.fsg.domain.auth.mapper.UserMapper
+import team.iwfsg.fsg.domain.auth.mapper.AuthMapper
+import team.iwfsg.fsg.domain.auth.presentation.data.request.SignUpRequest
 import team.iwfsg.fsg.domain.auth.service.SignUpService
 
 class SignUpControllerTest : BehaviorSpec({
-    val userMapper = mockk<UserMapper>()
+    val authMapper = mockk<AuthMapper>()
     val signUpService = mockk<SignUpService>()
 
     val authController = AuthController(
             signUpService = signUpService,
-            userMapper = userMapper
+            authMapper = authMapper
     )
 
     Given("회원가입 요청이 들어오면") {
@@ -30,7 +29,7 @@ class SignUpControllerTest : BehaviorSpec({
 
 
         When("is receive") {
-            every { userMapper.mapSignUpRequestToDto(request) } returns dto
+            every { authMapper.mapSignUpRequestToDto(request) } returns dto
             every { signUpService.execute(dto) } returns Unit
 
             val response = authController.signIn(request)
