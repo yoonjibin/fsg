@@ -5,6 +5,7 @@ import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.ints.exactly
 import io.mockk.*
 import team.iwfsg.fsg.domain.auth.persistence.repository.RefreshTokenRepository
+import team.iwfsg.fsg.domain.user.data.dto.SignUpDto
 import team.iwfsg.fsg.domain.user.persistence.repository.UserRepository
 import team.iwfsg.fsg.global.security.jwt.JwtTokenProvider
 
