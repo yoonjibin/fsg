@@ -8,6 +8,7 @@ import org.junit.jupiter.api.assertThrows
 import org.springframework.security.crypto.password.PasswordEncoder
 import team.iwfsg.fsg.domain.auth.data.dto.SignUpDto
 import team.iwfsg.fsg.domain.auth.exception.UserAlreadyExistException
+import team.iwfsg.fsg.domain.auth.mapper.UserMapper
 import team.iwfsg.fsg.domain.auth.service.SignUpService
 import team.iwfsg.fsg.domain.auth.service.impl.SignUpServiceImpl
 import team.iwfsg.fsg.domain.user.persistence.entity.UserJpaEntity
@@ -16,13 +17,18 @@ import team.iwfsg.fsg.domain.user.persistence.repository.UserRepository
 class SignUpServiceTest: BehaviorSpec({
     val userRepository = mockk<UserRepository>()
     val passwordEncoder = mockk<PasswordEncoder>()
+    val userMapper = mockk<UserMapper>()
     val signUpService = SignUpServiceImpl(userRepository = userRepository,
-            passwordEncoder = passwordEncoder)
+            passwordEncoder = passwordEncoder,
+            userMapper = userMapper
+    )
 
     Given("회원가입에 필요한 정보들이 주어졌을 때") {
         val name = "test1234"
         val email = "test@gmail.com"
         val password = "test1234"
+        val encodedPassword = "encodedPassword"
+        val userEntity = UserJpaEntity(0, name, email, password)
 
 
         val dto = SignUpDto(name, email, password)
@@ -31,7 +37,8 @@ class SignUpServiceTest: BehaviorSpec({
                 every { signUpService.execute(dto) } just runs
 
                 every { userRepository.existsByEmail(email) } returns false
-                every { passwordEncoder.encode(password) } returns "encodedPassword"
+                every { passwordEncoder.encode(password) } returns encodedPassword
+                every { userMapper.mapSignUpDtoToEntity(dto, encodedPassword) } returns  userEntity
                 every { userRepository.save(any<UserJpaEntity>()) } returns UserJpaEntity(0, name, email, password)
 
                 Then("가입이 완료되어야 한다.") {
