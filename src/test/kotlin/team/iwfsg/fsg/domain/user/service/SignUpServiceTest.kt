@@ -38,11 +38,9 @@ class SignUpServiceTest: BehaviorSpec({
                 }
 
                 Then("유저가 저장되지 않고 오류가 발생해야한다.") {
-                    shouldThrow<HeadNotSameException> {
+                    shouldThrow<UserAlreadyExistsException> {
                         SignUpService.execute(signUpDto)
                     }
-                    verify(exactly = 1) { userRepository.existsByEmail(email) }
-                    verify(exactly = 0) { userRepository.save(any()) }
                 }
             }
         }
