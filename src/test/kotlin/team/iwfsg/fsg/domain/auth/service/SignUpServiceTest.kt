@@ -1,7 +1,5 @@
-package team.iwfsg.fsg.domain.user.service
+package team.iwfsg.fsg.domain.auth.service
 
-import io.kotest.assertions.throwables.shouldNotThrowAny
-import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.BehaviorSpec
 import io.mockk.*
 import org.junit.jupiter.api.assertThrows
@@ -9,7 +7,6 @@ import org.springframework.security.crypto.password.PasswordEncoder
 import team.iwfsg.fsg.domain.auth.data.dto.SignUpDto
 import team.iwfsg.fsg.domain.auth.exception.UserAlreadyExistException
 import team.iwfsg.fsg.domain.auth.mapper.UserMapper
-import team.iwfsg.fsg.domain.auth.service.SignUpService
 import team.iwfsg.fsg.domain.auth.service.impl.SignUpServiceImpl
 import team.iwfsg.fsg.domain.user.persistence.entity.UserJpaEntity
 import team.iwfsg.fsg.domain.user.persistence.repository.UserRepository
