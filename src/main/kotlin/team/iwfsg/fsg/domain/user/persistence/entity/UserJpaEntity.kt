@@ -16,8 +16,5 @@ class UserJpaEntity(
     val email: String,
 
     @Column(nullable = false)
-    val password: String,
-
-    @Column(nullable = false)
-    val money: Long
+    val password: String
 )
