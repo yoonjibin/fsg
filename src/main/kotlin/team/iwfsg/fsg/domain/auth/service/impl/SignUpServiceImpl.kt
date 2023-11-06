@@ -18,10 +18,20 @@ class SignUpServiceImpl(
 ) : SignUpService {
 
     override fun execute(dto: SignUpDto) {
-        val isExist = userRepository.existsByEmail(dto.email)
-        if(isExist) {
+        if(userExists(dto.email)) {
             throw UserAlreadyExistException()
         }
-        userRepository.save(UserJpaEntity(0, dto.name, dto.email, passwordEncoder.encode(dto.password)))
+
+        saveUser(dto)
+    }
+
+    private fun userExists(email: String) =
+        userRepository.existsByEmail(email)
+
+    private fun saveUser(dto: SignUpDto) {
+        val encodedPassword = passwordEncoder.encode(dto.password)
+        val userEntity = UserJpaEntity(0, dto.name, dto.email, encodedPassword)
+
+        userRepository.save(userEntity)
     }
 }
