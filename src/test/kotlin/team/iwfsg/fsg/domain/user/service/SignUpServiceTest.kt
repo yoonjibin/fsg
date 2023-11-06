@@ -4,6 +4,7 @@ import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.BehaviorSpec
 import io.mockk.*
 import team.iwfsg.fsg.domain.auth.data.dto.SignUpDto
+import team.iwfsg.fsg.domain.auth.exception.UserAlreadyExistException
 import team.iwfsg.fsg.domain.user.persistence.repository.UserRepository
 
 class SignUpServiceTest: BehaviorSpec({
@@ -34,7 +35,7 @@ class SignUpServiceTest: BehaviorSpec({
                 }
 
                 Then("유저가 저장되지 않고 오류가 발생해야한다.") {
-                    shouldThrow<UserAlreadyExistsException> {
+                    shouldThrow<UserAlreadyExistException> {
                         SignUpService.execute(signUpDto)
                     }
                 }
